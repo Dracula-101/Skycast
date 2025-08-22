@@ -1,0 +1,120 @@
+{
+  ConstraintSets: {
+    start: {
+      collapsing_box: {
+        width: 'parent',
+        height: 270,
+        start: ['parent', 'start', 0],
+        top: ['parent', 'top', 0],
+        end: ['parent', 'end', 0],
+        bottom: ['parent', 'top', 220],
+        alpha: 0
+      },
+      data_content: {
+        top: ['collapsing_box', 'bottom'],
+        bottom: ['parent', 'bottom'],
+        start: ['parent', 'start'],
+        end: ['parent', 'end']
+      },
+      top_left_item: {
+        top: ['parent', 'top', 40],
+        start: ['parent', 'start', 20],
+      },
+      top_right_item: {
+        top: ['parent', 'top', 30],
+        end: ['parent', 'end', 10]
+      },
+      title: {
+        start: ['parent', 'start', 20],
+        bottom: ['collapsing_box', 'bottom', 35],
+      },
+      subtitle: {
+        top: ['title', 'bottom', 2],
+        start: ['parent', 'start', 20],
+      },
+      title_sub_item: {
+        top: ['title', 'top', 2],
+        start: ['title', 'end', 2],
+      },
+      icon: {
+        right: ['parent', 'end', 20],
+        top: ['parent', 'top', 80],
+        bottom: ['collapsing_box', 'bottom', 30],
+        width: 50,
+        height: 50
+      },
+      bottom_content: {
+        bottom: ['collapsing_box', 'bottom', 10],
+        start: ['parent', 'start', 20],
+        end: ['parent', 'end', 20],
+        alpha: 0,
+        visibility: 'gone',
+      },
+    },
+    end: {
+      collapsing_box: {
+        width: 'parent',
+        height: 400,
+        start: ['parent', 'start', 0],
+        top: ['parent', 'top', 0],
+        end: ['parent', 'end', 0],
+        alpha: 1,
+      },
+      data_content: {
+        top: ['collapsing_box', 'bottom'],
+        start: ['collapsing_box', 'start'],
+        end: ['collapsing_box', 'end']
+      },
+      top_left_item: {
+        top: ['parent', 'top', 45],
+        start: ['parent', 'start', 20]
+      },
+      top_right_item: {
+        top: ['parent', 'top', 30],
+        end: ['parent', 'end', 10]
+      },
+      title: {
+        start: ['parent', 'start', 20],
+        bottom: ['collapsing_box', 'bottom', 100]
+      },
+      title_sub_item: {
+        top: ['title', 'top', 10],
+        start: ['title', 'end', 5],
+      },
+      subtitle: {
+        top: ['title', 'bottom', 0],
+        start: ['parent', 'start', 20],
+      },
+      icon: {
+        right: ['parent', 'end', 0],
+        top: ['parent', 'top', 45],
+        bottom: ['collapsing_box', 'bottom', 120],
+        width: 160,
+        height: 160
+      },
+      bottom_content: {
+        bottom: ['collapsing_box', 'bottom', 10],
+        start: ['parent', 'start', 20],
+        end: ['parent', 'end', 20],
+        alpha: 1,
+        visibility: 'visible'
+      }
+    }
+  },
+  Transitions: {
+    default: {
+      from: 'start',
+      to: 'end',
+      KeyFrames: {
+        KeyAttributes: [
+          {
+            target: ['bottom_left_text', 'bottom_right_text'],
+            frames: [0, 25, 50, 75, 100],
+            alpha: [0, 0, 0.3, 0.6, 1],
+            translationY: [40, 30, 20, 10, 0]
+          }
+        ]
+      }
+    }
+  }
+}
